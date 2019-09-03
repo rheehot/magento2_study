@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Controller\Category\View">
+        <plugin name="ajax_layered_nav_pro_plugin_category_view" type="Codazon\AjaxLayeredNavPro\Plugin\Category\View" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\CatalogSearch\Controller\Result\Index">
+        <plugin name="ajax_layered_nav_pro_plugin_catalogsearch_result_index" type="Codazon\AjaxLayeredNavPro\Plugin\CatalogSearch\View" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Codazon\Shopbybrandpro\Controller\Index\View">
+        <plugin name="ajax_layered_nav_pro_plugin_brand_view" type="Codazon\AjaxLayeredNavPro\Plugin\Brand\View" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\LayeredNavigation\Block\Navigation\FilterRenderer">
+        <plugin name="ajax_layered_nav_pro_layered_renderer" type="Codazon\AjaxLayeredNavPro\Plugin\Navigation\FilterRenderer" sortOrder="0" />
+    </type>
+</config>

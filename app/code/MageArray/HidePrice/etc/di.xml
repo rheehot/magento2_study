@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Hide Price -->
+    <preference for="Magento\Catalog\Block\Product\View\Options" type="MageArray\HidePrice\Block\Options"/>
+    <preference for="Magento\Catalog\Pricing\Render\FinalPriceBox"
+                type="MageArray\HidePrice\Pricing\Render\FinalPriceBox"/>
+    <preference for="Magento\Catalog\Pricing\Render\PriceBox" type="MageArray\HidePrice\Pricing\Render\PriceBox"/>
+
+    <!-- Hide AddToCart -->
+    <preference for="Magento\Catalog\Model\Product" type="MageArray\HidePrice\Model\Catalog\Product"/>
+
+    <!-- Hide Price From My Wishlist Customer My account -->
+    <preference for="Magento\Framework\Pricing\Render\Amount"
+                type="MageArray\HidePrice\Framework\Pricing\Render\Amount"/>
+
+</config>

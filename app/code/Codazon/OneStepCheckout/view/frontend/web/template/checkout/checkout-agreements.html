@@ -1,0 +1,60 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form id="checkout_agreements_block">
+    <div data-role="checkout-agreements">
+        <div class="checkout-agreements" data-bind="visible: isVisible">
+            <!-- ko foreach: agreements -->
+                <!-- ko if: ($parent.isAgreementRequired($data)) -->
+                <div class="checkout-agreement required">
+                    <input type="checkbox"
+                            data-bind="click: function(data, event) { return $parent.changeHandler(data, event) }"
+                           data-bind="attr: {
+                                        'id': $parent.getCheckboxId($parentContext, agreementId),
+                                        'name': 'agreement[' + agreementId + ']',
+                                        'value': agreementId
+                                        }"/>
+                    <input type="checkbox" style="visibility:hidden;" class="required-entry required"
+                           data-bind="attr: {
+                                        'id': $parent.getCheckboxId($parentContext, agreementId),
+                                        'name': 'agreement[' + agreementId + ']',
+                                        'value': agreementId
+                                        }"/>
+                    <label data-bind="attr: {'for': $parent.getCheckboxId($parentContext, agreementId)}">
+                        <button type="button"
+                                class="action action-show"
+                                data-bind="click: function(data, event) { return $parent.showContent(data, event) }"
+                                >
+                            <span data-bind="html: checkboxText"></span>
+                        </button>
+                    </label>
+                </div>
+                <!-- /ko -->
+                <!-- ko ifnot: ($parent.isAgreementRequired($data)) -->
+                <div class="checkout-agreement">
+                    <button type="button" class="action action-show"
+                            data-bind="click: function(data, event) { return $parent.showContent(data, event) }">
+                        <span data-bind="html: checkboxText"></span>
+                    </button>
+                </div>
+                <!-- /ko -->
+            <!-- /ko -->
+            <div id="osc-checkout-agreements-modal" data-bind="afterRender: initModal" style="display: none">
+                <div class="checkout-agreements-item-content" data-bind="html: modalContent"></div>
+            </div>
+        </div>
+    </div>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button class="action primary checkout" type="submit" id="sidebar_place_order" data-bind="
+                        click: placeOrder,
+                        attr: {title: $t('Place Order')}"
+                        title="Place Order">
+                <span data-bind="i18n: 'Place Order'">Place Order</span>
+            </button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MageArray_HidePrice::hideprice" title="Hide Price" module="MageArray_HidePrice" sortOrder="82"
+             parent="MageArray_Core::core" dependsOnModule="MageArray_HidePrice" resource="MageArray_Core::core"/>
+
+        <add id="MageArray_HidePrice::settings" title="Settings" module="MageArray_HidePrice" sortOrder="50"
+             resource="MageArray_HidePrice::settings" action="adminhtml/system_config/edit/section/hideprice"
+             parent="MageArray_HidePrice::hideprice"/>
+    </menu>
+</config>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php $_product = $block->getProduct();
+ $_helper = $this->helper('Magento\Catalog\Helper\Output');
+ $imageUrl = $this->helper('Magento\Catalog\Helper\Image')
+                    ->init($_product, 'product_base_image')
+                    ->constrainOnly(TRUE)
+                    ->keepAspectRatio(TRUE)
+                    ->keepTransparency(TRUE)
+                    ->keepFrame(FALSE)
+                    ->resize(800, 800)->getUrl();
+?>
+
+<div class="social-addthis" data-media="<?php echo $imageUrl ?>">
+      <a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=<?php echo $_helper->productAttribute($_product, $_product->getProductUrl(), 'product_url'); ?>&amp;title=<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>" target="_blank">
+	      <span class="icon-facebook fa fa-facebook"></span>
+      </a> 
+      <a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=<?php echo $_helper->productAttribute($_product, $_product->getProductUrl(), 'product_url'); ?>&amp;title=<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>" target="_blank">
+	      <span class="icon-twitter fa fa-twitter"></span>
+      </a>
+	 <a href="https://www.pinterest.com/pin/create/button/?url=<?php echo $_helper->productAttribute($_product, $_product->getProductUrl(), 'product_url'); ?>&media=<?php echo $imageUrl ?>&description=<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>" target="_blank">
+	      <span class="icon-pinterest fa fa-pinterest-square"></span>
+      </a> 
+</div>  

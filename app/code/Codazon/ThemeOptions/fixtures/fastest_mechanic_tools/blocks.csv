@@ -1,0 +1,194 @@
+title,identifier,content
+"Fastest - Mechanic_tools - Main Menu",fastest-mechanic_tools-main-menu,"<div class=""cdz-main-menu"">{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-fashion-main-menu""}}</div>"
+"Fastest - Mechanic_tools - Main Slideshow - Top Banners","fastest-mechanic_tools-main-slideshow - top-banners","<div class=""slideshow-container row"">
+<div class=""col-sm-18 col-xs-24"">{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-mechanic_tools-home-slideshow""}}</div>
+<div class=""slideshow-smallbanner col-sm-6 com-xs-12"">
+<div class=""row hidden-xs"">
+<div class=""col-sm-24 col-xs-8 space-s""><a class=""shadow-effect"" href=""#""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/top-banner01.jpg""}}"" alt=""top-banner01.jpg"" /></a></div>
+<div class=""col-sm-24 col-xs-8 space-s""><a class=""shadow-effect"" href=""#""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/top-banner02.jpg""}}"" alt=""top-banner02.jpg"" /></a></div>
+<div class=""col-sm-24 col-xs-8 space-s""><a class=""shadow-effect"" href=""#""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/top-banner03.jpg""}}"" alt=""top-banner03.jpg"" /></a></div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Main Content - New Products",fastest-mechanic_tools-main-content-new-products,"<div class=""cdz-best-seller-wrap cdz-products product-style20"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>New Collections</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""name DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`141`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Main Content - Popular Categories",fastest-mechanic_tools-main-content-pouplar-categories,"<div class=""categories-banner-grid space-base"">
+<div class=""row"">
+<div class=""container"">
+<div class=""col-sm-12 col-xs-24 categories-col group"">
+<div class=""cdz-block-title"">
+<p class=""title"">Popular Categories</p>
+</div>
+<div class=""cat-list"">
+<div class=""cdz-slider cdz-slider-banners cdz-slider-navigation-icon owl-carousel"" data-items=""4"" data-items-0=""1"" data-items-320=""3"" data-items-480=""4"" data-items-768=""3"" data-items-980=""4"" data-items-1280=""4"" data-margin=""0"">
+<div class=""cat-col"">
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-01.jpg""}}"" alt=""cat-banner.jpg"" /> </span> <span class=""title""> Drills </span> </a></div>
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-02.jpg""}}"" alt=""cat-banner.jpg"" /> </span> <span class=""title""> Saws </span> </a></div>
+</div>
+<div class=""cat-col"">
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-03.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Sanders </span> </a></div>
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-04.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Oscillating </span> </a></div>
+</div>
+<div class=""cat-col"">
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-01.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Drills </span> </a></div>
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-02.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Saws </span> </a></div>
+</div>
+<div class=""cat-col"">
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-03.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Sanders </span> </a></div>
+<div class=""cat-item""><a href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-04.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""title""> Oscillating </span> </a></div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-12 col-xs-24 categories-col banner"">
+<div class=""line-effect""><a class=""category-banner"" href=""#""> <span class=""thumb""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/cat-banner.jpg""}}"" alt=""cat-banner.jpg"" /></span> <span class=""banner-text""> <span class=""title h1 text-uppercase""> parts, service &amp; batteries </span> <span class=""des""> Register your power tool to enjoy the benefits of the Lifetimes Service Agreement </span> </span> </a><a class=""line-effect-content"" href=""#""> </a></div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Main Content - Product Tabs ",fastest-mechanic_tools-main-content-product-tabs,"<div class=""cdz-product-tabs product-style20"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Featured Products</span></p>
+</div>
+<div class=""tabs-list bestseller-product tabs-list-sty03 "" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<ul class=""nav nav-tabs hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Accessories</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Power tools</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Hand tools</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""16"" order_by=""entity_id ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`141`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""6"" order_by=""price ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`141`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""14"" order_by=""entity_id DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`141`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Bottom Banner",fastest-mechanic_tools-bottom-banner,"<div class=""home-banner space-base"">
+<div class=""row"">
+<div class=""col-sm-12 main-banner""><a class=""shadow-effect"" href=""#""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/tool-banner-01.jpg""}}"" alt=""tool-banner-01.jpg"" /> <span class=""banner-text""> <span class=""h1 bg""> Power tools &amp; </span> <span class=""h2""> ORGANIZERS </span> </span> </a></div>
+<div class=""col-sm-12 second-banner"">
+<div class=""row"">
+<div class=""col-sm-12 col-xs-12""><a class=""shadow-effect"" href=""#""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/tool-banner-02.jpg""}}"" alt=""tool-banner-02.jpg"" /> <span class=""banner-text h1""> Cordless </span> </a></div>
+<div class=""col-sm-12 col-xs-12""><a class=""shadow-effect"" href=""#""> <img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/mechanic-tools/home/tool-banner-03.jpg""}}"" alt=""tool-banner-03.jpg"" /> <span class=""banner-text h1""> Hand Tools </span> </a></div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Footer Content - About Us",fastest-mechanic_tools-footer-content-about-us,"<div class=""row clsflex"">
+<div class=""col-sm-8 col-md-10 col-lg-12 box-aboutus clsflex-grow"">
+<div class=""box-content"">
+<p class=""h2"">About Us</p>
+<div>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+<p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+</div>
+</div>
+</div>
+<div class=""col-sm-8 col-md-7 col-lg-6 box-tweets clsflex-grow"">
+<div class=""box-content"">
+<p class=""h2"">TWITTER</p>
+{{block class=""Codazon\ThemeOptions\Block\Latesttweets"" name=""latest.twitter"" template=""Magento_Theme::html/latest_tweets.phtml""}}</div>
+</div>
+<div class=""col-sm-8 col-md-6 col-md-7 col-lg-6 box-facebook clsflex-grow"">
+<div class=""box-content"">
+<p class=""h2"">Facebook</p>
+{{block class=""Magento\Framework\View\Element\Template"" name=""facebook_fanbox"" template=""Magento_Theme::html/facebook_fanbox.phtml""}}</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Footer Content 2 - Footer Links",fastest-mechanic_tools-footer-content-2-footer-links,"<div class=""row"">
+<div class=""col-sm-18"">
+<div class=""row"">
+<div class=""col-sm-6"">
+<div class=""footer-logo-wrapper""><img class=""footer-logo img-responsive"" src=""{{media url=""wysiwyg/codazon/sportswear/home/logo-footer.png""}}"" alt="""" /></div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-1"">CORPORATE</p>
+<ul id=""footer-content-1"" class=""footer-link showhide"">
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">About Us</a></li>
+<li><a href=""#"">Orders and Returns</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">YOU LINK</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">Shipping guide</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Store location</a></li>
+<li><a href=""#"">Afiliates</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Customer point policy</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">Support</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">FAQ</a></li>
+<li><a href=""{{store url=""""}}about-magento-demo-store/"">Our services</a></li>
+<li><a href=""{{store url=""""}}contacts/"">Contact Us</a></li>
+<li class=""last""><a href=""{{store url=""""}}privacy-policy-cookie-restriction-mode/"">Forum Support</a></li
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<div class=""footer-social"">
+<p class=""social""><a href=""#""><span class=""fa fa-facebook"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-twitter"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-pinterest-p"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-google-plus"">&nbsp;</span></a> <a href=""#""><span class=""fa fa-vimeo"">&nbsp;</span></a></p>
+</div>
+<div class=""newsletter-container"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""form.subscribe"" as=""subscribe"" before=""-"" template=""subscribe.phtml""}}</div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Before Footer - Latest Blog",fastest-mechanic_tools-before-footer-latest-blog,"<div class=""cdz_wapper-blog03"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" title=""Latest Blog Posts"" categories=""20"" order_by=""title"" order=""asc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" thumb_width=""270"" thumb_height=""270"" show_slider=""1"" post_template=""custom"" custom_template=""latest_blog_slider.phtml""}}</div>"
+"Fastest - Mechanic_tools - Block Popup Content",fastest-mechanic_tools-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url='wysiwyg/codazon/mechanic-tools/home/banner-newsletter.jpg'}}"" alt=""Banner 01"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Mechanic_tools - Main Content - Best Selling Products",fastest-mechanic_tools-main-content-best-selling-products,"<div class=""cdz-best-seller-wrap cdz-products product-style20"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Best Selling Products</span></p>
+</div>
+</div>
+</div>
+<div class=""row"">
+<div class=""col-sm-24"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""6"" order_by=""entity_id DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""custom"" custom_template=""grid_slider.phtml"" show_slider=""1"" slider_item=""4"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`141`^]^]""}}</div>
+</div>
+</div>"

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="SimplifiedMagento\FirstModule\NotMagento\PencilInterface"
+                type="SimplifiedMagento\FirstModule\NotMagento\YellowPencil" />
+
+    <preference for="Magento\Catalog\Api\ProductRepositoryInterface"
+                type="SimplifiedMagento\FirstModule\Model\CustomImplementation" />
+
+    <preference for="SimplifiedMagento\FirstModule\Api\Color"
+                type="SimplifiedMagento\FirstModule\Model\Yellow" />
+
+    <preference for="SimplifiedMagento\FirstModule\Api\Color"
+                type="SimplifiedMagento\FirstModule\Model\Yellow" />
+
+    <preference for="SimplifiedMagento\FirstModule\Api\Size"
+                type="SimplifiedMagento\FirstModule\Model\Normal" />
+
+    <type name="SimplifiedMagento\FirstMagento\Model\Pencil">
+        <arguments>
+            <argument name="currencyInstalled" xsi:type="string">system/currency/installed</argument>
+        </arguments>
+    </type>
+
+    <type name="SimplifiedMagento\FirstMagento\Model\Student">
+        <arguments>
+            <argument name="name" xsi:type="string">Bob</argument>
+            <argument name="age" xsi:type="number">Bob</argument>
+            <argument name="scores" xsi:type="array">Bob</argument>
+            <argument name="name" xsi:type="string">Bob</argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Framwork\Model\Product">
+        <plugin name="before_set_name" type="\SimplifiedMagento\FirstModule\Plugin\PluginSolution" sortOrder="10"/>
+    </type>
+
+    <type name="SimplifiedMagento\FirstModule\Controller\Page\HelloWorld">
+        <arguments>
+            <argument name="heavyService" xsi:type="object">SimplifiedMagento\FirstModule\Controller\Page\HelloWorld</argument>
+        </arguments>
+    </type>
+
+</config>

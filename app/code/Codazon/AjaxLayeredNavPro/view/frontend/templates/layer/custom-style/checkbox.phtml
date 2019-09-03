@@ -1,0 +1,108 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+
+<?php
+$filter = $this->getOptionsFilter();
+$filterItems = $filter->getItems();
+$helper = $this->helper('Codazon\AjaxLayeredNavPro\Helper\Data');
+$code = $filter->getRequestVar();
+$selectedOption = $this->getRequest()->getParam($code);
+$selectedOption = explode(',', $selectedOption);
+$action = $helper->getFilterAction($filter);
+$widgetParams = [
+    'action'        => $action,
+    'code'          => $filter->getRequestVar()
+];
+
+?>
+<?php if ($this->getIsSwatchAttribute()) : ?>
+<?php $swatchData = $block->getSwatchData(); ?>
+<div class="<?= $this->getData('custom_style') ?>-container swatch-layered <?= $swatchData['attribute_code'] ?>" data-role="filter-checkbox-container" data-filter='<?= json_encode($widgetParams) ?>'>
+    <ul class="items filter-checkbox">
+        <?php $i = 0; foreach ($filterItems as $filterItem) :  //($swatchData['options'] as $option => $label):?> 
+            <?php
+                $option = $filterItem->getValue();
+                $label = $swatchData['options'][$option];
+            ?>
+            <li class="cb-item <?= (in_array($option, $selectedOption)) ? 'active':'' ?> type-<?= isset($swatchData['swatches'][$option]['type']) ? $swatchData['swatches'][$option]['type'] : 'none' ?>">
+                <input type="checkbox" id="filter-<?= $code ?>-<?= $i ?>" <?= (in_array($option, $selectedOption)) ? 'checked':'' ?> value="<?= $option ?>">
+                <label for="filter-<?= $code ?>-<?= $i ?>">
+                <?php if (isset($swatchData['swatches'][$option]['type'])) { ?>
+                    <?php switch ($swatchData['swatches'][$option]['type']) {
+                        case '3':
+                            ?>
+                            
+                            <div class="swatch-option <?= /* @escapeNotVerified */ $label['custom_style'] ?>"
+                                 tabindex="-1"
+                                 option-type="3"
+                                 option-id="<?= /* @escapeNotVerified */ $option ?>"
+                                 option-label="<?= /* @escapeNotVerified */ $label['label'] ?>"
+                                 option-tooltip-thumb=""
+                                 option-tooltip-value=""
+                                ></div>
+                            <?php    break;
+                        case '2':
+                            ?>
+                            <?php $swatchThumbPath = $block->getSwatchPath('swatch_thumb',
+                            $swatchData['swatches'][$option]['value']); ?>
+                            <?php $swatchImagePath = $block->getSwatchPath('swatch_image',
+                            $swatchData['swatches'][$option]['value']); ?>
+                            <div class="swatch-option image <?= /* @escapeNotVerified */ $label['custom_style'] ?>"
+                                 tabindex="-1"
+                                 option-type="2"
+                                 option-id="<?= /* @escapeNotVerified */ $option ?>"
+                                 option-label="<?= /* @escapeNotVerified */ $label['label'] ?>"
+                                 option-tooltip-thumb="<?= /* @escapeNotVerified */ $swatchThumbPath ?>"
+                                 option-tooltip-value=""
+                                 style="background: url(<?= /* @escapeNotVerified */ $swatchImagePath ?>) no-repeat center; background-size: initial;"></div>
+                            <?php    break;
+                        case '1':
+                            ?>
+                            <div class="swatch-option color <?= /* @escapeNotVerified */ $label['custom_style'] ?>"
+                                 tabindex="-1"
+                                 option-type="1"
+                                 option-id="<?= /* @escapeNotVerified */ $option ?>"
+                                 option-label="<?= /* @escapeNotVerified */ $label['label'] ?>"
+                                 option-tooltip-thumb=""
+                                 option-tooltip-value="<?= /* @escapeNotVerified */ $swatchData['swatches'][$option]['value'] ?>"
+                                 style="background: <?= /* @escapeNotVerified */ $swatchData['swatches'][$option]['value'] ?> no-repeat center; background-size: initial;"></div>
+                            <?php    break;
+                        case '0':
+                        default:
+                           break;
+                    } ?>
+                <?php } ?>
+                <span class="text"><?= $label['label']; ?> <span class="count"><?= $filterItem->getCount() ?></span></span>
+                </label>
+                </li>
+        <?php $i++; endforeach; ?>
+    </ul>
+</div>
+<script>
+    require(["jquery", "jquery/ui", "Magento_Swatches/js/swatch-renderer"], function ($) {
+        $('.swatch-layered.<?= /* @escapeNotVerified */ $swatchData['attribute_code'] ?>')
+            .find('[option-type="1"], [option-type="2"], [option-type="0"], [option-type="3"]')
+            .SwatchRendererTooltip();
+    });
+</script>
+<?php else : ?>
+<?php  if (count($filterItems)) : ?>
+<div class="<?= $this->getData('custom_style') ?>-container" data-role="filter-checkbox-container" data-filter='<?= json_encode($widgetParams) ?>'>
+    <ul class="items filter-checkbox">
+    <?php $i = 0; foreach ($filterItems as $filterItem) : ?>
+        <li>
+        <?php $value = $filterItem->getValue(); ?>
+        <input type="checkbox" id="filter-<?= $code ?>-<?= $i ?>" <?= (in_array($value, $selectedOption)) ? 'checked':'' ?> value="<?= $value ?>">
+        <label for="filter-<?= $code ?>-<?= $i ?>"><?= $filterItem->getLabel(); ?> <span class="count"><?= $filterItem->getCount() ?></span></label>
+        </li>
+    <?php $i++; endforeach ?>
+    </ul>
+</div>
+<?php endif ?>
+
+<?php endif ?>

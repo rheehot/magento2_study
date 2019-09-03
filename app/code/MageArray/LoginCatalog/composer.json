@@ -1,0 +1,28 @@
+{
+  "name": "magearray/module-logincatalog",
+  "description": "N/A",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "proprietary"
+  ],
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0",
+    "magento/module-backend": "100.0.*",
+    "magento/module-config": "100.0.*",
+    "magento/module-cms": "100.0.*",
+    "magento/module-directory": "100.0.*",
+    "magento/module-store": "100.0.*",
+    "magento/framework": "100.0.*",
+    "magento/module-catalog": "100.0.*",
+    "magento/module-customer": "100.0.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "MageArray\\LoginCatalog\\": ""
+    }
+  }
+}

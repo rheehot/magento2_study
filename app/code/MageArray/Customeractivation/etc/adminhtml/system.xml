@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<!-- Add new Tab -->
+		<tab id="magearray" translate="label" sortOrder="400">
+			<label>MageArray Extensions</label>
+		</tab>
+		<section id="customeractivation" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label>Customer Activation</label>
+			<tab>magearray</tab>
+			<!-- resource tag name which we have to defined in the acl.xml -->
+			<resource>MageArray_Customeractivation::config_customeractivation</resource>
+			<group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Options</label>
+				<field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="customers" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Customer Options</label>
+				<field id="defaultactivation" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Activate New Customer Accounts By Default</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="activationforgroup" type="select" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer Groupwise Activation</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>				
+				<field id="requireactivationgroup" type="multiselect" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Require Activation For Group</label>
+                    <source_model>Magento\Customer\Model\Config\Source\Group</source_model>
+					<depends><field id="activationforgroup">1</field></depends>
+                </field>
+			</group>
+			<group id="customersemail" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Customer Email Options</label>
+				<field id="alertcustomer" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Notify Customer Of Account Activation</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends><field id="active">1</field></depends>
+				</field>
+				<field id="senderdetail" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Email Sender</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+					<depends><field id="alertcustomer">1</field></depends>
+				</field>
+				<field id="welcomeemailtemplate" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Customer Notification Email Template</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+					<depends><field id="alertcustomer">1</field></depends>
+				</field>				
+			</group>
+			<group id="admincon" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Admin Options</label>
+				<field id="alertadmin" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Notify Admin On Customer Registration</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends><field id="active">1</field></depends>
+				</field>
+				<field id="adminemailtemplate" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Admin Notification Email Template</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+					<depends><field id="alertadmin">1</field></depends>
+				</field>
+				<field id="adminemail" translate="label comment" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Admin Recipients Email Addresses</label>
+					<depends><field id="alertadmin">1</field></depends>
+                    <validate>validate-email</validate>
+					<comment>Comma-separated For Ex. test@example.com,test1@example.com</comment>
+				</field>
+			</group>
+			<group id="message" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Message Options</label>
+				<field id="registration_success_messagetext" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Registration success Message</label>
+					<depends><field id="active">1</field></depends>
+				</field>
+				<field id="errormessagetext" translate="label" type="text" sortOrder="1" showInDefault="2" showInWebsite="1" showInStore="1">
+					<label>Error Message</label>
+					<depends><field id="active">1</field></depends>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

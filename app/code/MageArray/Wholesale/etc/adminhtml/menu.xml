@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="MageArray_Core::core" title="MageArray Extensions" module="MageArray_Wholesale" sortOrder="80"
+                resource="MageArray_Wholesale::wholesale"/>
+
+        <add id="MageArray_Wholesale::wholesale" title="Wholesale" module="MageArray_Wholesale" sortOrder="30"
+             parent="MageArray_Core::core" dependsOnModule="MageArray_Wholesale" resource="MageArray_Core::core"/>
+
+        <add id="MageArray_Wholesale::settings" title="Settings" module="MageArray_Wholesale" sortOrder="50"
+             resource="MageArray_Wholesale::settings" action="adminhtml/system_config/edit/section/wholesale"
+             parent="MageArray_Wholesale::wholesale"/>
+    </menu>
+</config>

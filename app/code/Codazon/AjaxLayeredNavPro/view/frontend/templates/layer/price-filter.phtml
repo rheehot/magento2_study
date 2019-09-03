@@ -1,0 +1,69 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$request = $this->getRequest();
+$filter = $this->getOptionsFilter();
+$items = $filter->getItems();
+$code = $filter->getRequestVar();
+$productCollection = $filter->getLayer()->getProductCollection();
+$pageSize = $productCollection->getPageSize();
+$productCollection->getSelect()->limit(false);
+$attributeValueCount = $productCollection->getAttributeValueCount($code);
+$productCollection->getSelect()->limit($pageSize);
+$prices = array_keys($attributeValueCount);
+
+if ($priceRange = $request->getParam($code)) {
+    $priceRange = explode('-', $priceRange);
+    $minPrice = $priceRange[0] ? $priceRange[0] : round(min($prices));
+    $maxPrice = $priceRange[1] ? : round(max($prices));
+} else {
+    $minPrice = (float)(min($prices));
+    $maxPrice = (float)(max($prices));
+}
+
+
+$query = $request->getQueryValue();
+$query[$code] = null;
+$action = $this->getUrl('*/*/*', [
+    '_current'      => true,
+    '_use_rewrite'  => true,
+    '_query'        => $query
+]);
+$currency = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Store\Model\StoreManagerInterface')->getStore()->getCurrentCurrency()->getCurrencySymbol();
+$uniqId = uniqid();
+if ($code == 'price') {
+    $widget = [
+        'minValue'  => $productCollection->getMinPrice(),
+        'maxValue'  => max($maxPrice, $productCollection->getMaxPrice())
+    ];
+} else {
+    $widget = [
+        'minValue'  => (float)$minPrice,
+        'maxValue'  => (float)$maxPrice
+    ];
+}
+?>
+
+<div class="price-slider-container" data-role="price-slider-container" data-filter='<?= json_encode($widget) ?>'>
+    <form action="<?= $action ?>" method="GET" data-role="price-form" data-code=<?= $code ?>>
+        <input type="hidden" name="<?= $code ?>" value="<?= $minPrice ?>-<?= $maxPrice ?>" />
+        <div class="price-slider" data-role="price-slider"></div>
+        <div class="input-wrap">
+            <div class="control min-value">
+                <input class="input-text" id="min-price-<?= $uniqId ?>" name="min_price" type="text" required="required" number="true" validate-zero-or-greater="true" placeholder="<?= __('From') ?>" data-role="min_price" value="<?= $minPrice ?>" />
+            </div>
+            <span class="delimiter">-</span>
+            <div class="control max-value">
+                <input class="input-text" id="max-price-<?= $uniqId ?>" name="max_price" type="text" required="required" number="true" validate-greater-than-zero="true" placeholder="<?= __('To') ?>" data-role="max_price" value="<?= $maxPrice ?>" />
+            </div>
+            <span class="currency"><?= $currency ?></span>
+        </div>
+        <div class="action">
+            <button type="submit" class="btn submit" data-role="go" title="<?= __('Apply filter') ?>"><?= __('Go') ?></button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Codazon::top_level" module="Codazon_Utility" resource="Magento_Backend::content" sortOrder="9999" title="Codazon Utility"/>
+		<add action="cdzutility/theme/index" id="Codazon_Utility::theme_index" module="Codazon_Utility" parent="Codazon::top_level" resource="Codazon_Utility::theme_index" sortOrder="9999" title="Theme Clone"/>
+		<!--add id="Codazon_Utility::themes_install" title="Theme Installer" module="Codazon_Utility" sortOrder="20" parent="Codazon::top_level" action="cdzutility/theme/install" resource="Codazon_Utility::theme_index"/-->
+	</menu>
+</config>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!--head>
+        <link type="text/css" src="Codazon_AjaxLayeredNavPro::css/ajax-layerd-nav-pro.css" />
+    </head-->
+    <body>
+        <referenceContainer name="content">
+            <block name="category.products.list.container" class="Magento\Framework\View\Element\Template" template="Codazon_AjaxLayeredNavPro::config.phtml" after="-" />
+        </referenceContainer>
+        <move element="category.products" destination="category.products.list.container" before="-" />
+        <referenceBlock name="catalog.navigation.state" template="Codazon_AjaxLayeredNavPro::layer/state.phtml" />
+        <referenceBlock name="catalog.leftnav">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">Codazon_AjaxLayeredNavPro::shopbybrands/layer/view.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

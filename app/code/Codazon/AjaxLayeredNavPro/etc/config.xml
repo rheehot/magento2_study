@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <codazon_ajaxlayerednavpro>
+			<general>
+				<enable>1</enable>
+				<enable_price_slider>1</enable_price_slider>
+                <enable_multiselect>1</enable_multiselect>
+                <options_box_state>2</options_box_state>
+                <box_max_height>150</box_max_height>
+			</general>
+            <price_slider>
+                <step>0.1</step>
+            </price_slider>
+		</codazon_ajaxlayerednavpro>
+	</default>
+</config>

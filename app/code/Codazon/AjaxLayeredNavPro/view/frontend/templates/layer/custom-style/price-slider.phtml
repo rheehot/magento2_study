@@ -1,0 +1,88 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */ 
+?>
+
+<?php
+$request = $this->getRequest();
+$filter = $this->getOptionsFilter();
+$items = $filter->getItems();
+$code = $filter->getRequestVar();
+$helper = $this->helper('Codazon\AjaxLayeredNavPro\Helper\Data');
+    $rate = $helper->getRate();
+if ($productCollection = $filter->getBeforeApplyCollection()) {
+    
+} else {
+    $productCollection = $filter->getLayer()->getProductCollection();
+}
+$pageSize = $productCollection->getPageSize();
+$productCollection->getSelect()->limit(false);
+if ($code == 'price') {
+    $minPrice = $productCollection->getMinPrice();
+    $maxPrice = $productCollection->getMaxPrice();
+} else {
+    $minPrice = 0;
+    $maxPrice = 1000000000;
+}
+$attributeValueCount = $productCollection->getAttributeValueCount($code);
+$productCollection->getSelect()->limit($pageSize);
+$prices = array_keys($attributeValueCount);
+
+if ($priceRange = $request->getParam($code)) {
+    $priceRange = explode('-', $priceRange);
+    $minPrice = ($priceRange[0]!==null) ? $priceRange[0] : floor(min($prices));
+    $maxPrice = $priceRange[1] ? : ceil(max($prices));
+} else {
+    $minPrice = count($prices) ? (float)(min($prices)) : $minPrice;
+    $maxPrice = count($prices) ? (float)(max($prices)) : $maxPrice;
+}
+
+
+$query = $request->getQueryValue();
+$query[$code] = null;
+$action = $this->getUrl('*/*/*', [
+    '_current'      => true,
+    '_use_rewrite'  => true,
+    '_query'        => $query
+]);
+$currency = \Magento\Framework\App\ObjectManager::getInstance()
+    ->get('Magento\Store\Model\StoreManagerInterface')
+    ->getStore()
+    ->getCurrentCurrency()
+    ->getCurrencySymbol();
+$uniqId = uniqid();
+if ($code == 'price') {
+    $widget = [
+        'minValue'  => round(min($minPrice, $productCollection->getMinPrice())*$rate),
+        'maxValue'  => round(max($maxPrice, $productCollection->getMaxPrice())*$rate),
+    ];
+} else {
+    $widget = [
+        'minValue'  => (float)$minPrice,
+        'maxValue'  => (float)$maxPrice
+    ];
+}
+?>
+
+<div class="price-slider-container" data-role="price-slider-container" data-filter='<?= json_encode($widget) ?>'>
+    <form action="<?= $action ?>" method="get" data-role="price-form" data-code=<?= $code ?>>
+        <input type="hidden" name="<?= $code ?>" value="<?= $minPrice ?>-<?= $maxPrice ?>" />
+        <input type="hidden" name="rate" data-role="rate" value="<?= $rate ?>"/>
+        <div class="price-slider" data-role="price-slider"></div>
+        <div class="input-wrap">
+            <div class="control min-value">
+                <input class="input-text" id="min-price-<?= $uniqId ?>" name="min_price" type="text" required="required" number="true" validate-zero-or-greater="true" placeholder="<?= __('From') ?>" data-role="min_price" value="<?= round($minPrice*$rate) ?>" />
+            </div>
+            <span class="delimiter">–</span>
+            <div class="control max-value">
+                <input class="input-text" id="max-price-<?= $uniqId ?>" name="max_price" type="text" required="required" number="true" validate-greater-than-zero="true" placeholder="<?= __('To') ?>" data-role="max_price" value="<?= round($maxPrice*$rate) ?>" />
+            </div>
+            <span class="currency"><?= $currency ?></span>
+        </div>
+        <div class="action">
+            <button type="submit" class="btn submit" data-role="go" title="<?= __('Apply filter') ?>"><?= __('Go') ?></button>
+        </div>
+    </form>
+</div>

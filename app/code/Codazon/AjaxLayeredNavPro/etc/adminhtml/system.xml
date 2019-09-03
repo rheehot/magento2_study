@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="codazon" translate="label" sortOrder="400">
+            <label>Codazon</label>
+        </tab>
+		<section id="codazon_ajaxlayerednavpro" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Ajax Layer Navigation</label>
+            <tab>codazon</tab>
+            <resource>Codazon_AjaxLayeredNavPro::settings</resource>
+			<group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+				<field id="enable" translate="label,comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set No, multi-select feature and ajax filter feature will be disabled.</comment>
+                </field>
+                <field id="enable_multiselect" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Multi Select</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="options_box_state" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Options Box State</label>
+                    <source_model>Codazon\AjaxLayeredNavPro\Model\Config\Source\OptionsBoxState</source_model>
+                </field>
+                <field id="box_max_height" translate="label,comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Filter Box Maximum Height</label>
+                    <comment>Maximum height of attribute options box. Leave empty or 0 to unassign maximum height.</comment>
+                </field>
+			</group>
+		</section>
+	 </system>
+</config>

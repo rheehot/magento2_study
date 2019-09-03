@@ -1,0 +1,38 @@
+<form action="<?php echo $this->getUrl('cdzutility/theme/save') ?>" method="post">
+    <?php echo $this->getBlockHtml('formkey')?>
+    <div class="fieldset-wrapper">
+        <div class="admin__fieldset-wrapper-content _hide">
+            <fieldset class="admin__fieldset">
+                <div class="admin__field _required">
+                    <label class="admin__field-label">
+                        <span><?php echo _("Parent") ?></span>
+                    </label>
+                    <div class="admin__field-control">
+                        <select class="admin__control-select" type="text" name="parent">
+                            <?php foreach($block->getCodazonThemes() as $theme): ?>
+                                <option value="<?php echo $theme->getId() ?>"><?php echo $theme->getThemeTitle() ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="admin__field _required">
+                    <label class="admin__field-label">
+                        <span><?php echo _("Package") ?></span>
+                    </label>
+                    <div class="admin__field-control">
+                        <input class="admin__control-text" type="text" name="package" value="Codazon/fastest">
+                    </div>
+                </div>
+                <div class="admin__field _required">
+                    <label class="admin__field-label">
+                        <span><?php echo _("Theme") ?></span>
+                    </label>
+                    <div class="admin__field-control">
+                        <input class="admin__control-text" type="text" name="theme">
+                    </div>
+                </div>
+            </fieldset>
+            <button class="button"><?php echo _('Submit') ?></button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="MageArray_Core::core" title="MageArray Extensions" module="MageArray_LoginCatalog" sortOrder="80"
+                resource="MageArray_LoginCatalog::logincatalog"/>
+
+        <add id="MageArray_LoginCatalog::logincatalog" title="Catalog Login" module="MageArray_LoginCatalog"
+             sortOrder="30" parent="MageArray_Core::core" dependsOnModule="MageArray_LoginCatalog"
+             resource="MageArray_Core::core"/>
+
+        <add id="MageArray_LoginCatalog::settings" title="Settings" module="MageArray_LoginCatalog" sortOrder="50"
+             resource="MageArray_LoginCatalog::settings" action="adminhtml/system_config/edit/section/logincatalog"
+             parent="MageArray_LoginCatalog::logincatalog"/>
+    </menu>
+</config>

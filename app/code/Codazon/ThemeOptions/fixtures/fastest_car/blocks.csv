@@ -1,0 +1,270 @@
+title,identifier,content
+"Fastest - Car - Header Custom Links",fastest-car-header-custom-links,"<ul class=""order-tracker"">
+<li><a href=""{{store url=""contact""}}"">Contact Us</a></li>
+<li><a href=""tel:01455 XXXXXX"">Customer Helpline: 01455 XXXXXX</a></li>
+</ul>"
+"Fastest - Car - Main Menu",fastest-car-main-menu,"{{widget type=""Codazon\MegaMenu\Block\Widget\Megamenu"" menu=""fastest-car-main-menu""}}"
+"Fastest - Car - Home Slideshow",fastest-car-home-slideshow,"<div>{{widget type=""Codazon\Slideshow\Block\Widget\Slideshow"" slideshow_id=""fastest-car-home-slideshow""}}</div>"
+"Fastest - Car - Home Lookbook",fastest-car-home-lookbook,"<div class=""main-second-background"">
+<div class=""featured-look-style-01 featured-look-container fullwidth-content"">
+<div class=""cdz-title"">
+<p class=""b-title h2""><span>LOOKBOOK STORE FEATURED PRODUCTS!</span><a class=""all-lb"" href=""{{config path=""web/secure/base_url""}}lookbook"">View all <i class=""fa fa-long-arrow-right""> </i></a></p>
+</div>
+<div class=""cdz-block-content"">{{widget type=""Codazon\Lookbookpro\Block\Widget\FeaturedLook"" custom_template=""widget/featured-look/featured-look-style-01.phtml"" width=""1200"" look_ids=""62,63"" product_image_width=""300"" product_image_height=""300"" product_width=""200"" dots=""1"" nav=""0""}}</div>
+</div>
+</div>"
+"Fastest - Car - Home Our Products",fastest-car-home-our-products,"<div class=""main-second-background"">
+<div class=""fullwidth-content"" style=""max-width: 1000px;"">
+<div class=""cdz-our-product-wrap product-style22"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>Our product</span></p>
+</div>
+{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""10"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""300"" thumb_height=""300"" filter_template=""product/widget/content/grid.phtml"" show_slider=""1"" slider_item=""3"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`137`^]^]""}}</div>
+</div>
+</div>"
+"Fastest - Car - Home Categories",fastest-car-home-categories,"<div class=""categories-block space-lg"">
+<div class=""categories-bg""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/bg.jpg&quot;}}"" alt=""""></div>
+<div class=""categories-list"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2"">WE HAVE THE PRODUCTS YOU NEED, FROM A-Z</p>
+</div>
+<div class=""fullwidth-content"">
+<ul class=""cdz-slider"" data-items=""5"" data-items-0=""1"" data-items-480=""2"" data-items-768=""3"" data-items-1024=""4"" data-items-1280=""5"" data-items-1440=""5"" data-loop=""false"">
+<li>
+<p class=""cat-img""><a href=""#""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/01.jpg&quot;}}"" alt=""""></a></p>
+<p class=""cat-title""><a href=""#"">Service Parts</a></p>
+</li>
+<li>
+<p class=""cat-img""><a href=""#""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/02.jpg&quot;}}"" alt=""""></a></p>
+<p class=""cat-title""><a href=""#"">Brakes</a></p>
+</li>
+<li>
+<p class=""cat-img""><a href=""#""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/03.jpg&quot;}}"" alt=""""></a></p>
+<p class=""cat-title""><a href=""#"">Body &amp; Exhaust</a></p>
+</li>
+<li>
+<p class=""cat-img""><a href=""#""><img src=""{{media url=&quot;wysiwyg/codazon/car/04.jpg&quot;}}"" alt=""""></a></p>
+<p class=""cat-title""><a href=""#"">Suspension &amp; Steering</a></p>
+</li>
+<li>
+<p class=""cat-img""><a href=""#""><img src=""{{media url=&quot;wysiwyg/codazon/car/05.jpg&quot;}}"" alt=""""></a></p>
+<p class=""cat-title""><a href=""#"">Engine Parts</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>"
+"Fastest - Car - Home Bestseller",fastest-car-home-bestseller,"<div class=""fullwidth-content bestseller-block space-lg"">
+<div class=""product-style22 padding-left-50"">
+<div class=""row"">
+<div class=""col-sm-24"">
+<div class=""cdz-block-title"">
+<p class=""b-title h2""><span>BEST SELLER PRODUCTS</span></p>
+</div>
+</div>
+</div>
+<div class=""row"" data-mage-init=""{&quot;tabs&quot;:{&quot;openedState&quot;:&quot;active&quot;}}"">
+<div class=""col-sm-24 tab-list-car-style bestseller-product"">
+<ul class=""nav nav-tabs tabs-list hidden-xs abs-dropdown"" data-mage-init=""{&quot;Codazon_ProductFilter/js/productfilter&quot;:{&quot;codazon.mobiledropdown&quot;:{}}}"">
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-1"" data-toggle=""switch"">Equipment</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-2"" data-toggle=""switch"">Tire</a></li>
+<li class=""data item title text-uppercase"" data-role=""collapsible""><a class=""data switch"" tabindex=""0"" href=""#best-seller-tab-3"" data-toggle=""switch"">Car care</a></li>
+</ul>
+<div class=""tab-content product data items"">
+<div id=""best-seller-tab-1"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""9"" order_by=""name ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""345"" filter_template=""custom"" custom_template=""product/widget/content/infinitescroll_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`136`^]^]""}}</div>
+<div id=""best-seller-tab-2"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""9"" order_by=""price DESC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""345"" filter_template=""custom"" custom_template=""product/widget/content/infinitescroll_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`136`^]^]""}}</div>
+<div id=""best-seller-tab-3"" class=""data item content"" data-role=""content"">{{widget type=""Codazon\ProductFilter\Block\Product\ProductsList"" display_type=""all_products"" products_count=""9"" order_by=""entity_id ASC"" show=""thumb,name,review,price,addtocart,addto"" thumb_width=""280"" thumb_height=""345"" filter_template=""custom"" custom_template=""product/widget/content/infinitescroll_grid.phtml"" show_slider=""0"" conditions_encoded=""^[`1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Combine`,`aggregator`:`all`,`value`:`1`,`new_child`:``^],`1--1`:^[`type`:`Magento||CatalogWidget||Model||Rule||Condition||Product`,`attribute`:`category_ids`,`operator`:`==`,`value`:`136`^]^]""}}</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Car - Home Banner",fastest-car-home-banner,"<div class=""home-banner-block space-lg""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/mid-bg.jpg&quot;}}"" alt="""">
+<div class=""banner-content"">
+<p>GPS &amp; NAVIGATION</p>
+<h1>Never worry about getting lost</h1>
+<p class=""desc"">GPS device allows you to easily and safely navigate without draining your smartphone battery. You can also add ease to your outdoor activities or handheld device for outdoor adventures.</p>
+<a class=""button btn-link"" href=""#"">View all collection</a></div>
+</div>"
+"Fastest - Car - Home Blog",fastest-car-home-blog,"<div class=""fullwidth-content cdz-wapper-blog-car-style"">
+<div class=""text-center space-lg"">{{widget type=""Magefan\Blog\Block\Widget\PostList"" title=""Our Blog"" categories=""19"" order_by=""publish_time"" order=""desc"" post_count=""6"" show_in_front=""thumb,name,description,published_date,author"" desc_length=""150"" thumb_width=""580"" thumb_height=""375"" show_slider=""1"" post_template=""custom"" custom_template=""post/widget/grid.phtml""}}</div>
+</div>"
+"Fastest - Car - Home Brands",fastest-car-home-brands,"<div class=""fullwidth-content brand-car-style space-lg"">
+<div class=""block-title""><img src=""{{media url=""wysiwyg/codazon/car/block-icon.png""}}"" alt="""" />Top Selling Brands <a class=""view-all"" href=""#"">View all</a></div>
+<div class=""content"">{{widget type=""Codazon\Shopbybrandpro\Block\Widget\BrandSlider"" list_style=""widget/static_list.phtml"" limit=""14"" collection=""all_brands"" alphabet_table=""a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"" items_per_column=""2"" order_by=""brand_label"" order_way=""asc"" thumb_width=""200"" thumb_height=""200"" slider_dots=""0"" slider_nav=""0"" slider_loop=""0"" slider_margin=""20"" items_1900=""7"" items_1600=""7"" items_1420=""7"" items_1280=""7"" items_980=""4"" items_768=""3"" items_480=""3"" items_320=""2"" items_0=""2""}}</div>
+</div>"
+"Fastest - Car - Preview",fastest-car-home-preview,"<div class=""fullwidth-content space-lg"">
+<div class=""row"" style=""margin: 0;"">
+<div class=""col-sm-15 preview-col space-xs"">
+<div class=""ratings-car-style""><img class=""ltr-img img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/rating-bg.jpg&quot;}}"" alt=""""> <img class=""rtl-img img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/rating-bg-rtl.jpg&quot;}}"" alt="""">
+<div class=""rating-container"">
+<div class=""rating-inner"">
+<div class=""cdz-wrapper-banner cdz-slider cdz-slider-banners cdz-slider-navigation-icon"" data-items=""1"" data-items-0=""1"" data-items-480=""1"" data-items-768=""1"" data-items-1024=""1"" data-items-1280=""1"" data-margin=""20"">
+<div class=""cdz-banners-item content"">
+<div class=""cdz-rating"">
+<div class=""rating-result"" title=""80%""><span style=""width: 100%;"">80%</span></div>
+</div>
+<p class=""cdz-title"">Great service</p>
+<p class=""cdz-desc"">""In my quest to support the British manufacturing industry, the London based company has encouraged me to remain a Made in Britain brand.""</p>
+<p class=""cdz-author"">Karen Gold</p>
+</div>
+<div class=""cdz-banners-item content"">
+<div class=""cdz-rating"">
+<div class=""rating-result"" title=""80%""><span style=""width: 80%;"">80%</span></div>
+</div>
+<p class=""cdz-title"">Great service</p>
+<p class=""cdz-desc"">""In my quest to support the British manufacturing industry, the London based company has encouraged me to remain a Made in Britain brand.""</p>
+<p class=""cdz-author"">Karen Gold</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=""col-sm-9 no-padding service-block ""><img class=""img-responsive"" src=""{{media url=&quot;wysiwyg/codazon/car/service-bg.jpg&quot;}}"" alt=""""> <a class=""service-content"" href=""tel:01253709xxx"">Customer service<br>01455 221 XXX</a></div>
+</div>
+</div>"
+"Fastest - Car - Footer Top",fastest-car-footer-top,"<div class=""footer-content-top"">
+<div class=""fullwidth-content"">
+<div class=""wrapper-ads-car-style"">
+<div class=""row"">
+<div class=""col-sm-6 col-xs-12 space-xs service-col"">
+<div class=""text-area""><a href=""#""><span class=""icon-font fa fa-truck""> </span>
+<h4>Free UK Delivery*</h4></a>
+</div>
+</div>
+<div class=""col-sm-6 col-xs-12 space-xs service-col"">
+<div class=""text-area""><a href=""#""><span class=""icon-font fa fa-exchange""> </span>
+<h4>365 Day Returns</h4></a>
+</div>
+</div>
+<div class=""col-sm-6 col-xs-12 space-xs service-col"">
+<div class=""text-area""><a href=""#""><span class=""icon-font fa fa-pie-chart""> </span>
+<h4>130,000+ Parts in Stock</h4></a>
+</div>
+</div>
+<div class=""col-sm-6 col-xs-12 space-xs service-col"">
+<div class=""text-area""><a href=""#""><span class=""icon-font fa fa-database""> </span>
+<h4>Free Click &amp; Collect</h4></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Car - Footer Links",fastest-car-footer-links,"<div class=""fullwidth-content"">
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-1"">Customer Services</p>
+<ul id=""footer-content-1"" class=""footer-link showhide"">
+<li><a href=""#"">Find Your Store</a></li>
+<li><a href=""#"">Track My Order</a></li>
+<li><a href=""#"">Track My Booking</a></li>
+<li><a href=""#"">Delivery &amp; Returns</a></li>
+<li><a href=""#"">Contact Us</a></li>
+<li><a href=""#"">Halfords Trade Card</a></li>
+<li><a href=""#"">eGifts</a></li>
+<li class=""last""><a href=""#"">FAQ's</a></li>
+</ul>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-2"">Car Services</p>
+<ul id=""footer-content-2"" class=""footer-link showhide"">
+<li><a href=""#"">We Fit</a></li>
+<li class=""last""><a href=""#"">Chip Repair</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-6"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-3"">About Us</p>
+<ul id=""footer-content-3"" class=""footer-link showhide"">
+<li><a href=""#"">Halfords Careers</a></li>
+<li><a href=""#"">Halfords Business Services</a></li>
+<li><a href=""#"">Investor Relations</a></li>
+<li class=""last""><a href=""#"">Price Match</a></li>
+</ul>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-4"">Community</p>
+<ul id=""footer-content-4"" class=""footer-link showhide"">
+<li><a href=""#"">Re~Cycle</a></li>
+<li><a href=""#"">Programmes</a></li>
+<li class=""last""><a href=""#"">Bikeability</a></li>
+</ul>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-5"">#ReadyFor</p>
+<ul id=""footer-content-5"" class=""footer-link showhide"">
+<li><a href=""#"">Gallery</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-5"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-6"">Rewards</p>
+<ul id=""footer-content-6"" class=""footer-link showhide"">
+<li><a href=""#"">How it Works</a></li>
+<li><a href=""#"">Enroll for Rewards</a></li>
+<li><a href=""#"">Check Your Points</a></li>
+<li><a href=""#"">Add Rewards</a></li>
+<li class=""last""><a href=""#"">Voucher Balance</a></li>
+</ul>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-7"">Store</p>
+<ul id=""footer-content-7"" class=""footer-link showhide"">
+<li><a href=""#"">Find a Store</a></li>
+<li><a href=""#"">View All Locations</a></li>
+<li><a href=""#"">Make an Appointment</a></li>
+<li><a href=""#"">Need a Tow?</a></li>
+<li><a href=""#"">Speed Shop</a></li>
+<li class=""last""><a href=""#"">For the Professional</a></li>
+</ul>
+</div>
+</div>
+<div class=""col-sm-7"">
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-8"">Follow us</p>
+<ul id=""footer-content-8"" class=""footer-social showhide"">
+<li class=""facebook""><a href=""#""><span class=""fa fa-facebook"">facebook</span></a></li>
+<li class=""twitter""><a href=""#""><span class=""fa fa-twitter"">twitter</span> </a></li>
+<li class=""google""><a href=""#""><span class=""fa fa-google-plus"">google</span> </a></li>
+<li class=""instagram""><a href=""#""><span class=""fa fa-instagram"">instagram</span> </a></li>
+<li class=""you-tube""><a href=""#""><span class=""fa fa-youtube-play"">you tube</span> </a></li>
+</ul>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-9"">Email Sign Up</p>
+<div id=""footer-content-9"" class=""newsletter-container showhide"">
+<p>get all the latest news, trends and offs and offers straight to your inbox.</p>
+{{block class=""Magento\Newsletter\Block\Subscribe"" name=""form.subscribe"" as=""subscribe"" before=""-"" template=""subscribe.phtml""}}</div>
+</div>
+<div class=""footer-box"">
+<p class=""h5"" data-cdz-toggle=""#footer-content-10"">Payment</p>
+<div id=""footer-content-10"" class=""footer-payment showhide"">
+<div class=""cdz-footer-bottom-payment""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/fastest_fashion/home/cdz-footer-payment.png""}}"" alt=""Accept Payment"" /></div>
+</div>
+</div>
+</div>
+</div>"
+"Fastest - Car - Block Popup Content",fastest-car-block-popup-content,"<div class=""cdz-popup-newsletter"">
+<div class=""cdz-popup-newsletter-left"">
+<div class=""popup-banner"">
+<div class=""banner""><a href=""#""><img class=""img-responsive"" src=""{{media url=""wysiwyg/codazon/car/banner-newsletter.jpg""}}"" alt=""banner-newsletter"" /></a></div>
+</div>
+</div>
+<div class=""cdz-popup-newsletter-right"">
+<div class=""popup-title"">
+<h3 class=""text-uppercase""><span>Sign up Newsletter</span></h3>
+</div>
+<div class=""popup-content"">
+<div class=""popup-content-ads"">
+<p class=""popup-content-title h3"">Join YourStore's squad for 20% off</p>
+<p class=""popup-content-desc"">and get all the latest news, trends and offs and offers straight to your inbox. Or get 15% off using code SQUAD15</p>
+<div class=""popup-content-newsletter"">{{block class=""Magento\Newsletter\Block\Subscribe"" name=""cdz.newsletter.style05"" template=""popup_subscribe.phtml""}}</div>
+<p class=""popup-content-small"">1 UK only; 2. Offar expiras 23:59(GMT) 10/02/16; 3.</p>
+</div>
+</div>
+</div>
+</div>"

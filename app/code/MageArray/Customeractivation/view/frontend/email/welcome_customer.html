@@ -1,0 +1,19 @@
+<!--@subject Your account has been activated, {{var data.name}} @-->
+<!--@vars {
+"var this.getUrl($store, 'customer/account/')":"Customer Account URL",
+"var customer.email":"Customer Email",
+"var customer.name":"Customer Name"
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p>
+	<strong>Hello {{trans "%name" name=$data.name}}</strong>,<br/>
+	your account has been activated.<br/>
+	To log in when visiting our site just click <a href='{{store url="customer/account"}}' style="color:#1E7EC8;">Login</a> or
+	<a href='{{store url="customer/account/"}}' style="color:#1E7EC8;">My Account</a> at the top of every page, and then enter your e-mail address and password.
+</p>
+
+<p>If you have any questions about your account or any other matter, please feel free to contact us at <a href="mailto:{{config path='trans_email/ident_support/email'}}" style="color:#1E7EC8;">{{config path='trans_email/ident_support/email'}}</a> or by phone at {{config path='general/store_information/phone'}}.</p>
+
+<p>Thanks again!</p>
+{{template config_path="design/email/footer_template"}}

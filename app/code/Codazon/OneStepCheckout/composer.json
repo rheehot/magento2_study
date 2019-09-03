@@ -1,0 +1,21 @@
+{
+    "name": "codazon/module-onestepcheckout",
+    "description": "",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mage2Gen",
+            "email": "info@mage2gen.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Codazon\\OneStepCheckout\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="hideprice" translate="label" sortOrder="600">
+            <label>MageArray Extensions</label>
+        </tab>
+
+        <section id="hideprice" translate="label" type="text" sortOrder="280" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Hide Price</label>
+            <tab>magearray</tab>
+
+            <resource>MageArray_HidePrice::magearray_hideprice</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Options</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="display_text" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Display Text</label>
+                    <comment>The text will show in place of Price</comment>
+                    <validate>required-entry</validate>
+                </field>
+
+                <field id="url" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Link URL</label>
+                    <comment>Display Text will be linked with given URL</comment>
+                    <validate>required-entry</validate>
+                </field>
+
+                <field id="enable_customer_group" translate="label" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Hide By Customer Group</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="customer_group" translate="label" type="multiselect" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Customer Group</label>
+                    <source_model>MageArray\HidePrice\Model\Config\Source\Customergroup</source_model>
+                    <depends>
+                        <field id="enable_customer_group">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

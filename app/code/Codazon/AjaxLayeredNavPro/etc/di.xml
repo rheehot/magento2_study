@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 Codazon. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Attribute" type="Codazon\AjaxLayeredNavPro\Model\Layer\Filter\Attribute" />
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Price" type="Codazon\AjaxLayeredNavPro\Model\Layer\Filter\Price" />
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Decimal" type="Codazon\AjaxLayeredNavPro\Model\Layer\Filter\Decimal" />
+</config>

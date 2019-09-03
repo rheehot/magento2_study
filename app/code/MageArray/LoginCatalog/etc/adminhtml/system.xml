@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Add new Tab -->
+        <tab id="magearray" translate="label" sortOrder="400">
+            <label>
+                <![CDATA[<div style="background:url('data:image/png;base64,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') no-repeat; width: 180px; height: 20px;"></div>]]></label>
+        </tab>
+        <section id="logincatalog" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Catalog Login</label>
+            <tab>magearray</tab>
+            <!-- resource tag name which we have to defined in the acl.xml -->
+            <resource>MageArray_LoginCatalog::config_logincatalog</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Catalog Login</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_navigation" translate="label" type="select" sortOrder="2" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Hide Category Navigation</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_from_all_page" translate="label" type="select" sortOrder="3" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Redirect to login from any page</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_to_catalog" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Do redirect on Category Pages</label>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="redirect_from_all_page">0</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="redirect_to_product" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Do redirect on Product View Pages</label>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="redirect_from_all_page">0</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="redirect_to_catalogsearch" translate="label" type="select" sortOrder="4" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Do redirect on Catalog Search Pages</label>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="redirect_from_all_page">0</field>
+                    </depends>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="message" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Message when a customer is redirected</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="redirect_to_page" translate="label" type="select" sortOrder="6" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Redirect to</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <source_model>MageArray\LoginCatalog\Model\Config\Source\Redirect</source_model>
+                </field>
+                <field id="redirect_to_cms" translate="label" type="select" sortOrder="7" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Target CMS Page</label>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="redirect_to_page">2</field>
+                    </depends>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                </field>
+                <field id="disable_route" translate="label" type="textarea" sortOrder="8" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Disable on routes</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                    <comment>
+                        <![CDATA[
+                            Add route/controller/action routes (one per line) where no redirect should happen.<br/>
+                            For Ex.<br/>
+                            checkout/cart/index<br/>
+                            contact<br/>
+                            etc..
+                        ]]>
+                    </comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

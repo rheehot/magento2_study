@@ -1,0 +1,15 @@
+<!--@subject New customer registration at {{var store.getName()}} @-->
+
+{{template config_path="design/email/header_template"}}
+<p>
+New customer registration at {{config path="general/store_information/name"}}.<br />
+{{trans "Name: %name" name=$data.name}}<br />
+{{trans "Email: %email" email=$data.email}}
+</p>
+
+<p>
+To enable the customer, please visit the <a href='{{store url="admin/customer"}}'>Admin Interface</a> and go to
+Customers &gt; Manage Customers &gt; {{var data.getName()}} &gt; Account Information and
+activate the account.
+</p>
+{{template config_path="design/email/footer_template"}}

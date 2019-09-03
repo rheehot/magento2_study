@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../Email/etc/email_templates.xsd">
+    <template id="customeractivation_admincon_adminemailtemplate" label="New Customer Activation"
+              file="new_customer_activation.html" type="html" module="MageArray_Customeractivation" area="frontend"/>
+    <template id="customeractivation_customersemail_welcomeemailtemplate" label="Welcome Customer"
+              file="welcome_customer.html" type="html" module="MageArray_Customeractivation" area="frontend"/>
+</config>

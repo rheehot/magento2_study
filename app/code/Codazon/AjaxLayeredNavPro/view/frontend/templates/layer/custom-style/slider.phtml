@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+
+$filter = $this->getOptionsFilter();
+$filterItems = $filter->getItems();
+$helper = $this->helper('Codazon\AjaxLayeredNavPro\Helper\Data');
+$valuesRange = $helper->getItemsValuesRange($filter);
+$action = $helper->getFilterAction($filter);
+$minmax = $helper->getMinMaxOfRange($filter);
+$widgetParams = [
+    'action'        => $action,
+    'valuesRange'   => $valuesRange,
+    'range'         => true,
+    'code'          => $filter->getRequestVar(),
+    'min'           => $minmax[0],
+    'max'           => $minmax[1]
+];
+?>
+
+<?php  if ($count = count($filterItems)) : ?>
+<div class="items <?= $this->getData('custom_style') ?>-container price-slider-container" data-role="filter-slider-container" data-filter='<?= json_encode($widgetParams) ?>'>
+    <div class="filter-slider" data-role="filter-slider"></div>
+    <div class="slider-state">
+        <span class="min-value value" data-role="min-value"><?= $valuesRange[$minmax[0]]['label'] ?></span>
+        <span class="delimiter">–</span> 
+        <span class="max-value value" data-role="max-value"><?= $valuesRange[$minmax[1]]['label'] ?></span>
+    </div>
+</div>
+<?php endif ?>

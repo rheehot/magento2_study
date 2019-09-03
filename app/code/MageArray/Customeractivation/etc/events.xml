@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="customer_register_success">
+        <observer name="customer_register_success_act_observer"
+                  instance="MageArray\Customeractivation\Observer\Customerregistersuccess"/>
+    </event>
+    <event name="customer_login">
+        <observer name="customer_login_act_observer"
+                  instance="MageArray\Customeractivation\Observer\Aftercustmerlogin"/>
+    </event>
+</config>

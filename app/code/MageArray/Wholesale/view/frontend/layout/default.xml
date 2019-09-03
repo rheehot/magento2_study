@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links" cacheble="false">
+            <block class="MageArray\Wholesale\Block\Links\RegisterWholesale" name="register-wholesale"
+                   template="MageArray_Wholesale::links/register.phtml" cacheble="false"/>
+        </referenceBlock>
+
+    </body>
+</page>

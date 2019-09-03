@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="catalog_redirect" instance="MageArray\LoginCatalog\Observer\ControllerPredispatch"/>
+    </event>
+    <event name="page_block_html_topmenu_gethtml_before">
+        <observer name="hide_navigation" instance="MageArray\LoginCatalog\Observer\HideNavigation"/>
+    </event>
+</config>

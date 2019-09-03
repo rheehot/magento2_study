@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Codazon_AjaxLayeredNavPro::menu" parent="Magento_Catalog::catalog" title="Ajax Layered Navigation Pro" translate="title" module="Codazon_AjaxLayeredNavPro" sortOrder="40" resource="Codazon_AjaxLayeredNavPro::settings" />
+        <add id="Codazon_AjaxLayeredNavPro::settings" action="adminhtml/system_config/edit/section/codazon_ajaxlayerednavpro" parent="Codazon_AjaxLayeredNavPro::menu" title="Settings" translate="title" module="Codazon_AjaxLayeredNavPro" sortOrder="10" resource="Codazon_AjaxLayeredNavPro::settings" />
+    </menu>
+</config>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Catalog\Block\Navigation" name="catalog.leftnav" before="-" template="Magento_Catalog::navigation/left.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_img_width" xsi:type="number">218</argument>
+                <argument name="logo_img_height" xsi:type="number">41</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header.panel">
+            <container name="header.panel.left" label="Header Panel Left" htmlClass="pull-left col-sm-7 col-md-12" htmlTag="div" />
+            <container name="header.panel.right" label="Header Panel Right" htmlClass="pull-right col-sm-16 col-md-12 panel header" htmlTag="div" />
+        </referenceContainer>
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Html\Link" name="header-top-account" before="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">My Account</argument>
+                    <argument name="path" xsi:type="string">customer/account</argument>
+                    <argument name="class" xsi:type="string">customer-account visible-xs</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <move element="header.links" destination="header.panel.right" />
+        <move element="store_switcher" destination="header.panel.right" before="-" />
+        <move element="store_language" destination="header.panel.right" after="store_switcher" />
+        <move element="currency" destination="header.panel.right" after="-" />
+        
+        <referenceBlock name="footer_links" display="false" />
+
+        <move element="footer_links" destination="footer.bottom.left" before="-" />
+        <move element="copyright" destination="footer.content.bottom" after="-"/>
+        <!--<referenceContainer name="header.panel.store" remove="true" />-->
+        <referenceContainer name="main.menu" htmlClass="header-main-menu" />
+
+        <referenceContainer name="header.wrapper.content">
+            <container htmlClass="header content" htmlTag="div">
+                <container htmlClass="row cdz-fix-left" htmlTag="div">
+                    <container htmlClass="col-sm-7 col-lg-5 left-col" htmlTag="div">
+                        <container name="header.wrapper.left" htmlClass="header-wrapper-left" htmlTag="div" >
+                            <container name="logo.left" htmlClass="logo-left" htmlTag="div" />
+                            </container>
+                    </container>
+                    <container htmlClass="col-sm-24 col-lg-15 mid-col" htmlTag="div">
+                        <container name="header.wrapper.phone.number" label="Page Header Phone Number"  htmlClass="header-wrapper-phone-number" htmlTag="div" />
+                        <container name="header.wrapper.center" htmlClass="header-wrapper-center" htmlTag="div" />
+                    </container>
+                    <container htmlClass="col-sm-6 col-lg-4 right-col" htmlTag="div">
+                        <container name="header.wrapper.right" htmlClass="header-wrapper-right" htmlTag="div" />
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="logo" destination="logo.left" />
+        <move element="minicart" destination="header.wrapper.right" />
+        <move element="main.menu" destination="header.wrapper.center" />
+        <move element="top.search" destination="header.wrapper.right" />
+    </body>
+</page>

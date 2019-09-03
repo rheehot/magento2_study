@@ -1,0 +1,26 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$filter = $this->getOptionsFilter();
+$filterItems = $filter->getItems();
+$helper = $this->helper('Codazon\AjaxLayeredNavPro\Helper\Data');
+$selectedOption = $this->getRequest()->getParam($filter->getRequestVar());
+$action = $helper->getFilterAction($filter);
+?>
+
+<?php  if (count($filterItems)) : ?>
+<div class="items <?= $this->getData('custom_style') ?>-container">
+    <select class="filter-dropdown" data-role="filter-dropdown" data-code=<?= $filter->getRequestVar() ?>>
+        <option value="<?= $action ?>"><?= __('All') ?></option>
+    <?php foreach ($filterItems as $filterItem) : ?>
+        <option <?= ($selectedOption == $filterItem->getValue()) ? 'selected':'' ?> value="<?= $block->escapeUrl($filterItem->getUrl()); ?>"><?= $filterItem->getLabel(); ?>
+        (<?= $filterItem->getCount() ?>)</option>
+    <?php endforeach ?>
+    </select>
+</div>
+<?php endif ?>

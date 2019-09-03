@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Codazon. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="lookbookpro_featured_looks" class="Codazon\Lookbookpro\Block\Widget\FeaturedLook" is_email_compatible="true" placeholder_image="Codazon_Lookbookpro::images/featured-looks.png" ttl="86400">
+        <label translate="true">Codazon Featured Looks List</label>
+        <description translate="true">Show list of selected looks</description>
+        <parameters>
+            <parameter name="custom_template" xsi:type="text" required="false" visible="true" sort_order="10">
+                <label translate="true">Custom Template</label>
+                <description translate="true">Leave empty to use default template</description>
+            </parameter>
+            <parameter name="width" xsi:type="text" required="true" visible="true" sort_order="20">
+                <label translate="true">Look Image Width</label>
+                <value>1200</value>
+            </parameter>
+            <parameter name="look_ids" xsi:type="text" required="true" visible="true" sort_order="30">
+                <label translate="true">Look IDs</label>
+                <description translate="true">ID of looks displayed on the list. Separate IDs by comma (,). E.g., "6,11,22,23". Go to menu Codazon > Lookbook Pro
+ > Lookbook Item to create looks.</description>
+            </parameter>
+            <parameter name="product_image_width" xsi:type="text" required="true" visible="true" sort_order="40">
+                <label translate="true">Product Image Width</label>
+                <value>300</value>
+            </parameter>
+            <parameter name="product_image_height" xsi:type="text" required="true" visible="true" sort_order="50">
+                <label translate="true">Product Image Height</label>
+                <value>300</value>
+            </parameter>
+            <parameter name="product_width" xsi:type="text" required="true" visible="true" sort_order="60">
+                <label translate="true">Dropdown Width</label>
+                <description translate="true">The width of dropdown when clicking look points</description>
+                <value>200</value>
+            </parameter>
+            <parameter name="dots" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="70">
+                <label translate="true">Show Slider Dots</label>
+            </parameter>
+            <parameter name="nav" xsi:type="select" visible="true" source_model="Magento\Config\Model\Config\Source\Yesno" sort_order="80">
+                <label translate="true">Show Slider Arrows</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

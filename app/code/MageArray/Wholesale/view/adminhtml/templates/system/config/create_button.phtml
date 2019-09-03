@@ -1,0 +1,59 @@
+<div class="pp-buttons-container">
+    <button id="<?php echo $block->getHtmlId() ?>" 
+            class="create-websitestore" 
+            onclick='return false;'>
+        <span>
+            <span>
+                <span>
+                    <?php echo $block->escapeHtml($block->getButtonLabel()); ?>
+                </span>
+            </span>
+        </span>
+    </button>
+</div>
+<img src="<?php echo $block->getViewFileUrl('images/loader-2.gif') ?>"
+     alt="<?php echo __('Loading...'); ?>" 
+     class="loader" 
+     style="display:none;max-width: 32%;"/>
+<script>
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/alert"
+    ], function ($, alert) {
+        jQuery('.create-websitestore').on('click', function () {
+            var url = '<?php echo $block->getButtonUrl()?>';
+            var send = 1;
+            jQuery('.loader').show();
+            jQuery.ajax({
+                type: 'POST',
+                url: url,
+                data: {id: send},
+                dataType: 'json',
+                success: function (data) {
+                    jQuery('.loader').hide();
+                    console.log(data.success);
+                    if (data.success == 1) {
+                        alert({
+                            content: 'Website Created successfully',
+                            title: 'Information'
+                        });
+                        setTimeout(function () {
+                            window.location.href = '<?php echo $this->getUrl(
+                                '*/*/*',
+                                ['_current' => true,
+                                    '_use_rewrite' => true]
+                            )?>';
+                        }, 2000);
+                    }
+                    if (data.success == 2) {
+                        alert({
+                            content: 'Website Already Exists',
+                            title: 'Information'
+                        });
+                    }
+
+                }
+            });
+        })
+    });
+</script>

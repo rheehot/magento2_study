@@ -1,0 +1,101 @@
+<?php
+/**
+ * Copyright © 2018 Codazon, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+
+<?php
+$collection = $block->getLoadedCollection();
+$helper = $this->helper('Codazon\Lookbookpro\Helper\Data');
+$width = $this->getData('width') ? : 1200;
+$paddingBottom = 100;
+$productWidth = $this->getData('product_image_width') ? : 350;
+$productHeight = $this->getData('product_image_height') ? : 447;
+$productCollection = $helper->getProductCollectionByItemCollection($collection, $productWidth, $productHeight);
+$productPadding = 100*$productHeight/$productWidth;
+$widget = [
+    'Codazon_Lookbookpro/js/look-list' => [
+        'productWidth' => ($this->getData('product_width') ? : 200),
+        'nav'          => ($this->getData('nav')  ? (bool)$this->getData('nav') : false),
+        'dots'         => (($this->getData('dots') === '0') ? (bool)$this->getData('dots') : true),
+    ]
+]
+?>
+
+<?php if ($collection->count()) : ?>
+<div class="products lookbook-items wrapper featured-look-style-01" data-role="lookbook-items" data-mage-init='<?= json_encode($widget) ?>'>
+<div class="look-loader double-bounce-spinner" data-role="slider-loader">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+</div>
+<div class="loobook-item-list featured-look-list owl-carousel" data-role="look-slider">
+<?php foreach ($collection as $item) : ?>
+<?php
+    $name = $this->stripTags($item->getName());
+    $description = $this->stripTags($item->getDescription());
+    $img = $helper->getItemImageUrl($item, $width, null);
+    $itemData = json_decode($item->getData('item_data'), true);
+    $points = $helper->getItemPoints($item);
+    if ($itemData['width']) {
+        $imgHeight = 100*$itemData['height']/$itemData['width'];
+    } else {
+        $imgHeight = 100;
+    }
+?>
+<div class="item" data-role="item">
+    <div class="lookbook-inner">
+        <div class="auto-pos-wrap item-img-wrap" style="padding-bottom: <?= $imgHeight ?>%">
+            <div class="a-img">
+                <div class="img-center" style="height: <?= $imgHeight ?>%">
+                    <div class="canvas">
+                        <img class="small-image owl-lazy" alt="<?= $name; ?>" data-src="<?= $img; ?>" />
+                        <?php if ($points) : ?>
+                        <div class="item-points" data-role="small-item-points">
+                            <?php $i = 1; ?>
+                            <?php foreach ($points as $point) : ?>
+                            <?php if (!empty($point['productId'])) : ?>
+                            <div class="item-hook" data-productid="<?= $point['productId']; ?>" data-left="<?= $point['left'] ?>" data-top="<?= $point['top'] ?>" style="position:absolute; left: <?= $point['left'] ?>%; top: <?= $point['top']; ?>%">
+                                <div class="item-point" style="position: relative;"><?= $i; ?></div>
+                            </div>
+                            <?php endif ?>
+                            <?php $i++; endforeach ?>
+                        </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endforeach ?>
+</div>
+<div class="product-data" style="display: none;" data-role="product-html-data">
+    <?php if ($productCollection) : ?>
+    <?php foreach ($productCollection as $_product) : ?>
+    <?php
+    $productUrl = $_product->getProductUrl();
+    $productName = $_product->getName();
+    ?>
+    <div class="product-item" data-productid="<?= $_product->getId(); ?>" data-href="<?= $productUrl ?>">
+        <div class="product-top">
+            <div class="product-image abs-img" style="padding-bottom: <?= $productPadding; ?>%">
+                <img class="owl-lazy" data-src="<?= $_product->getData('small_image_url'); ?>" />
+                <div class="product-number" data-role="product-number"></div>
+            </div>
+        </div>
+        <div class="product-bottom">
+            <div class="actions">
+                <?= $_product->getData('price_html'); ?>
+            </div>
+            <a class="product-name" title="<?= $productName; ?>" href="<?= $productUrl; ?>"><?= $_product->getName(); ?></a>
+            <a class="button-buy" href="<?= $productUrl ?>"><span><?= __('Buy') ?></span></a>
+        </div>
+    </div>
+    <?php endforeach ?>
+    <?php endif ?>
+</div>
+</div>
+<?php else : ?>
+<div class="message info empty"><div><?= __('We can\'t find looks matching the selection.') ?></div></div>
+<?php endif ?>

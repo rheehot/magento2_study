@@ -1,0 +1,45 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!-- ko foreach: getRegion('authentication') -->
+<!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+
+<!-- ko foreach: getRegion('messages') -->
+    <!-- ko template: getTemplate() --><!-- /ko -->
+<!--/ko-->
+<div class="osc">
+	<div class="col">
+	    <ol id="checkoutSteps">
+	    <!-- ko foreach: getRegion('steps') -->
+	        <!-- ko foreach: getRegion('shipping-step') -->
+		        <!-- ko template: getTemplate() --><!-- /ko -->
+	        <!--/ko-->
+	    <!--/ko-->
+	    </ol>
+	</div>
+	<div class="col">
+		<ol>
+		<!-- ko foreach: getRegion('steps') -->
+	        <!-- ko foreach: getRegion('shipping-method-step') -->
+		        <!-- ko template: getTemplate() --><!-- /ko -->
+	        <!--/ko-->
+	    <!--/ko-->
+		<!-- ko foreach: getRegion('steps') -->
+	        <!-- ko foreach: getRegion('billing-step') -->
+
+				        <!-- ko template: getTemplate() --><!-- /ko -->
+
+	        <!--/ko-->
+	    <!--/ko-->
+		</ol>
+	</div>
+	<div class="col">
+	<!-- ko foreach: getRegion('sidebar') -->
+	    <!-- ko template: getTemplate() --><!-- /ko -->
+	<!--/ko-->
+	</div>
+</div>

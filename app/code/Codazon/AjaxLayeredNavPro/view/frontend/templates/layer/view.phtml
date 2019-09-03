@@ -1,0 +1,78 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Category layered navigation
+ *
+ * @var $block \Magento\LayeredNavigation\Block\Navigation
+ */
+?>
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter" id="layered-filter-block" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}'>
+        <?php $filtered = count($block->getLayer()->getState()->getFilters()) ?>
+        <div class="block-title filter-title" data-count="<?= $filtered ?>">
+            <strong data-role="title"><?= __('Shop By') ?></strong>
+        </div>
+        <div class="block-content filter-content">
+            <?= $block->getChildHtml('state') ?>
+
+            <?php if ($block->getLayer()->getState()->getFilters()): ?>
+                <div class="block-actions filter-actions">
+                    <a href="<?= $block->getClearUrl() ?>" class="action clear filter-clear"><span><?= __('Clear All') ?></span></a>
+                </div>
+            <?php endif; ?>
+            <?php $wrapOptions = false; ?>
+            <?php
+                $helper = $this->helper('Codazon\AjaxLayeredNavPro\Helper\Data');
+                $openAll = (int)$helper->getConfig('codazon_ajaxlayerednavpro/general/options_box_state');
+                if ($openAll == 2) {
+                    $count = count($block->getFilters());
+                    $active = [];
+                    for ($i = 0; $i < $count; $i++) {
+                        $active[] = $i;
+                    }
+                    $active = json_encode($active);
+                } elseif ($openAll == 1) {
+                    $active = json_encode([0]);
+                } else {
+                    $active = 'false';
+                }
+            ?>
+            <?php foreach ($block->getFilters() as $filter): ?>
+                <?php if ($filter->getItemsCount()): ?>
+                    <?php if (!$wrapOptions): ?>
+                        <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= __('Shopping Options') ?></strong>
+                        <div class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": <?= $active ?>, "multipleCollapsible": true}}'>
+                    <?php  $wrapOptions = true; endif; ?>
+                    <div data-role="collapsible" class="filter-options-item <?= $filter->getRequestVar() ?>">
+                        <div data-role="title" class="filter-options-title"><?= __($filter->getName()) ?></div>
+                        <div data-role="content" class="filter-options-content">
+                            <div class="filter-options-content-outer">
+                                <div class="filter-options-content-inner">
+                                    <?= $block->getChildBlock('renderer')->render($filter) ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <?php if ($wrapOptions): ?>
+                </div>
+            <?php else: ?>
+                <script>
+                    require([
+                        'jquery'
+                    ], function ($) {
+                        $('#layered-filter-block').addClass('filter-no-options');
+                    });
+                </script>
+            <?php endif; ?>
+        </div>
+    </div>
+<?php endif; ?>
